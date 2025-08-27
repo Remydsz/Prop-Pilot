@@ -3,6 +3,8 @@
 A developer guide explorer that uses **retrieval-augmented generation (RAG)** over a React codebase.  
 You can search for components, view their code, and ask natural language questions (“How do I use `NavLink` for active styles?”) to get contextual answers.  
 
+<img width="1026" height="693" alt="Screenshot 2025-08-27 at 3 32 47 AM" src="https://github.com/user-attachments/assets/f97370bb-0b55-4196-a65c-d247cc3ff84c" />
+
 ---
 
 ## Features
