@@ -4,6 +4,7 @@ import path from "path";
 import express from "express";
 import fetch from "node-fetch";
 import "dotenv/config";
+import cors from "cors";
 
 // ---------- types ----------
 type ComponentInfo = {
@@ -18,6 +19,7 @@ const PORT = Number(process.env.PORT || 3333);
 const OLLAMA_BASE = (process.env.OLLAMA_URL || "http://127.0.0.1:11434").replace(/\/$/, "");
 const EMBED_MODEL = process.env.OLLAMA_EMBED_MODEL || "nomic-embed-text";
 const GEN_MODEL = process.env.OLLAMA_GEN_MODEL || "phi3:mini"; // tiny default
+const CORS_ORIGIN = process.env.CORS_ORIGIN || "http://localhost:5173";
 
 // keep the model light & fast
 const GEN_OPTIONS = {
@@ -105,6 +107,14 @@ const INDEX: ComponentInfo[] = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 // ---------- app ----------
 const app = express();
 app.use(express.json());
+app.use(cors());
+
+app.use(cors({
+    origin: CORS_ORIGIN,
+    methods: ["GET","POST","PUT","DELETE","OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+app.options("*", cors());
 
 app.get("/healthz", (_req, res) => res.status(200).end());
 
