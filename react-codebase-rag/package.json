@@ -2,22 +2,22 @@
     "name": "react-codebase-rag",
     "version": "0.1.0",
     "scripts": {
-      "dev:api": "ts-node --transpile-only --compiler-options '{\"module\":\"commonjs\",\"moduleResolution\":\"node\"}' src/server.ts",
-      "ingest":  "ts-node --transpile-only --compiler-options '{\"module\":\"commonjs\",\"moduleResolution\":\"node\"}' src/indexer.ts",
-      "search":  "ts-node --transpile-only --compiler-options '{\"module\":\"commonjs\",\"moduleResolution\":\"node\"}' src/search.ts"
+        "dev:api": "ts-node --transpile-only --compiler-options '{\"module\":\"commonjs\",\"moduleResolution\":\"node\"}' src/server.ts",
+        "ingest": "ts-node --transpile-only --compiler-options '{\"module\":\"commonjs\",\"moduleResolution\":\"node\"}' src/indexer.ts",
+        "search": "ts-node --transpile-only --compiler-options '{\"module\":\"commonjs\",\"moduleResolution\":\"node\"}' src/search.ts"
     },
     "dependencies": {
-      "@babel/parser": "^7.25.0",
-      "@babel/traverse": "^7.25.0",
-      "dotenv": "^16.4.5",
-      "express": "^4.19.2",
-      "fast-glob": "^3.3.2",
-      "openai": "^4.55.0"
+        "@babel/parser": "^7.25.0",
+        "@babel/traverse": "^7.25.0",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "fast-glob": "^3.3.2",
+        "openai": "^4.55.0"
     },
     "devDependencies": {
-      "@types/babel__traverse": "^7.28.0",
-      "ts-node": "^10.9.2",
-      "typescript": "^5.5.4"
+        "@types/babel__traverse": "^7.28.0",
+        "@types/express": "^5.0.3",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.4"
     }
-  }
-  
+}
